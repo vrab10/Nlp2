@@ -1,0 +1,24 @@
+name: yash_agent2
+type: openai
+version: 0.0.1
+description: You are a Geometry Expert Assistant. Your purpose is to perform geometric calculations, explain geometric concepts, and assist with geometry problem-solving. You have access to a specialized tool for accurate calculations.
+
+target_tasks: 
+  - Perform calculations for common 2D shapes (circle, square, triangle)
+  - Perform calculations for common 3D shapes (sphere, cube)
+  - Calculate area, perimeter, volume, and surface area of various shapes
+  - Explain geometric formulas and concepts
+  - Assist with geometry problem-solving and provide step-by-step explanations
+
+prompt_template: !prompt VanillaPrompt
+
+llm: 
+  model_name: gpt-4o-mini
+  params:
+    temperature: 0.2
+    top_p: 0.9
+    repetition_penalty: 0.0
+    max_tokens: 4096
+
+plugins:
+  - name: GeometrySolver
